@@ -17,8 +17,12 @@
                 BorderThickness="0,4,0,4"
                 Panel.ZIndex="1" Margin="0,332,0,0">
             <Grid>
-            <Label  Foreground="White" Background="#FFDE5B00" x:Name="DT"/>
+                <Label  Foreground="White" Background="#FFDE5B00" x:Name="DT"/>
                 <Label  Foreground="White" Background="#FFDE5B00" x:Name="FL" Margin="107,0,0,0"/>
+                <Label Content="X2"  Foreground="White" Background="#FFDE5B00" Margin="10,-97,766,107"/>
+                <Label Content="X2"  Foreground="White" Background="#FFDE5B00" Margin="10,-277,766,288"/>
+                <Label Content="Y1"  Foreground="White" Background="#FFDE5B00" Margin="10,-235,766,246"/>
+                <Label Content="Y2"  Foreground="White" Background="#FFDE5B00" Margin="10,-52,766,63"/>
             </Grid>
         </Border>
         <Grid>
@@ -116,16 +120,16 @@
                               Width="108">
                                 <TextBox SelectionBrush="#FF00D717" 
                                      Foreground="White"
-                                     Name="X1txt" Margin="0,10,0,67" 
+                                     Name="X1txt" Margin="26,10,0,67" 
                                      Background="#FF1134A0"
-                                     HorizontalAlignment="Center" 
+                                     HorizontalAlignment="Left" 
                                      Width="93"   />
                                 <TextBox SelectionBrush="#FF00D717" 
                                      Foreground="White"
                                      Name="Y1txt" 
-                                     HorizontalAlignment="Center"
+                                     HorizontalAlignment="Left"
                                      Width="94"
-                                     Margin="0,46,0,29"
+                                     Margin="25,49,0,26"
                                      RenderTransformOrigin="0.467,0.465"
                                      Background="#FF1134A0" />
                             </Grid>
@@ -136,16 +140,16 @@
                             <Grid Height="117" HorizontalAlignment="Left" Width="143">
                                 <TextBox SelectionBrush="#FF00D717" 
                                      Foreground="White" 
-                                     Name="X2txt" Margin="9,13,0,80" 
+                                     Name="X2txt" Margin="0,10,0,83" 
                                      Background="#FF1134A0" 
-                                     HorizontalAlignment="Left"
+                                     HorizontalAlignment="Center"
                                      Width="97" />
                                 <TextBox SelectionBrush="#FF00D717"
                                      Foreground="White"  
                                      Name="Y2txt" 
-                                     Margin="0,58,37,35" 
+                                     Margin="0,58,0,35" 
                                      Background="#FF1134A0" 
-                                     HorizontalAlignment="Right" 
+                                     HorizontalAlignment="Center" 
                                      Width="96" />
                             </Grid>
                         </GroupBox>
