@@ -1,0 +1,220 @@
+﻿<Window x:Class="FTP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FTP"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Title="AVE" Height="374" Width="800" ResizeMode="NoResize" 
+        Background="#FFDE5B00" MouseDown="Window_MouseDown" Loaded="Window_Loaded">
+    <Grid Background="#FFDE5B00"
+          MouseDown="Grid_MouseDown">
+        <Border x:Name="Window_Edge"
+                BorderBrush="#FFFFFF"
+                BorderThickness="0,4,0,4"
+                Panel.ZIndex="1" Margin="0,332,0,0">
+            <Grid>
+            <Label  Foreground="White" Background="#FFDE5B00" x:Name="DT"/>
+                <Label  Foreground="White" Background="#FFDE5B00" x:Name="FL" Margin="107,0,0,0"/>
+            </Grid>
+        </Border>
+        <Grid>
+
+        </Grid>
+
+        <Grid VerticalAlignment="Center"  HorizontalAlignment="Left" Height="354"  Width="43" Margin="757,0,0,0">
+            <StackPanel Width="31" Orientation="Vertical" HorizontalAlignment="Left" Margin="12,0,0,0" >
+
+                <Menu Background="Transparent" Height="351" Width="30"
+                      >
+
+
+                    <MenuItem Foreground="White" Background="#FF1134A0">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="/icons/1.png"
+                               Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            </Image>
+                        </MenuItem.Icon>
+                        <MenuItem Background="#FFDE5B00"
+                                  Header="Внести точки"
+                                   Click="CreateANDCounted_Click" >
+
+                        </MenuItem>
+                        <MenuItem Background="#FFDE5B00"
+                                  Header="Очистить список"
+                                   Click="Deleter">
+
+                        </MenuItem>
+
+
+                    </MenuItem>
+
+
+                    <MenuItem 
+                              Foreground="White" 
+                              Background="#FF1134A0">
+                        <MenuItem.Icon>
+
+                            <Image Source="/icons/2.png"
+                               Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            </Image>
+                        </MenuItem.Icon>
+                        <MenuItem Background="#FFDE5B00"
+                                  Click="transformationToKiloButes_Click"
+                                  Header="Вывести ответ">
+
+                        </MenuItem>
+                    </MenuItem>
+
+                    <MenuItem Background="White" Click="Help_Clik">
+                        <MenuItem.Icon>
+
+                            <Image Source="/icons/faq.png"
+                               Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            </Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+
+
+                </Menu>
+
+
+
+            </StackPanel>
+        </Grid>
+        <Grid>
+            <TabControl Margin="0,0,130,0"
+                    Background="#FFDE5B00"
+                    Foreground="#FFDE5B00" >
+
+                <TabItem  Header="Координаты точек" 
+                      Foreground="#FFBF0606"
+                      BorderBrush="#FFDE5B00">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFDE5B00" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <Grid Background="#FFDE5B00" Margin="0,0,11,0">
+
+                        <GroupBox Foreground="White" 
+                              Header="Первая точка" 
+                              Margin="3,10,523,231" >
+
+                            <Grid Height="98"
+                              HorizontalAlignment="Center" 
+                              Width="108">
+                                <TextBox SelectionBrush="#FF00D717" 
+                                     Foreground="White"
+                                     Name="X1txt" Margin="0,10,0,67" 
+                                     Background="#FF1134A0"
+                                     HorizontalAlignment="Center" 
+                                     Width="93"   />
+                                <TextBox SelectionBrush="#FF00D717" 
+                                     Foreground="White"
+                                     Name="Y1txt" 
+                                     HorizontalAlignment="Center"
+                                     Width="94"
+                                     Margin="0,46,0,29"
+                                     RenderTransformOrigin="0.467,0.465"
+                                     Background="#FF1134A0" />
+                            </Grid>
+
+                        </GroupBox>
+                        <GroupBox Header="Вторая точка" Margin="1,190,523,42" RenderTransformOrigin="0.5,0.5" Foreground="White">
+
+                            <Grid Height="117" HorizontalAlignment="Left" Width="143">
+                                <TextBox SelectionBrush="#FF00D717" 
+                                     Foreground="White" 
+                                     Name="X2txt" Margin="9,13,0,80" 
+                                     Background="#FF1134A0" 
+                                     HorizontalAlignment="Left"
+                                     Width="97" />
+                                <TextBox SelectionBrush="#FF00D717"
+                                     Foreground="White"  
+                                     Name="Y2txt" 
+                                     Margin="0,58,37,35" 
+                                     Background="#FF1134A0" 
+                                     HorizontalAlignment="Right" 
+                                     Width="96" />
+                            </Grid>
+                        </GroupBox>
+                        <Button x:Name="But"
+                            Foreground="White"
+                            Content="Внести точки"
+                            HorizontalAlignment="Left"
+                            Margin="18,145,0,0"
+                            VerticalAlignment="Top" 
+                            Width="101"
+                            Click="CreateANDCounted_Click" 
+                            Background="#FFDE5B00"/>
+                        <ListBox Name="LB" Margin="135,0,-12,42" 
+                             Background="#FF233B86" 
+                             Foreground="#FFF9F9F9" />
+                        <Button  Foreground="White"  
+                             Content="Очистить список" 
+                             HorizontalAlignment="Left" 
+                             Margin="18,170,0,0"
+                             VerticalAlignment="Top"
+                             Width="101" 
+                             Background="#FF233B86"
+                                 Click="Deleter"/>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Foreground="#FFBF0606"
+                     Header="Перекладач в килобайты"
+                     BorderBrush="#FF19FF00">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FF19FF00" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <Grid Background="#FF1134A0">
+                        <TextBox x:Name="BytesTo" 
+                             HorizontalAlignment="Left" 
+                             Margin="0.24,30,0,0" 
+                             TextWrapping="Wrap" 
+                             VerticalAlignment="Top" 
+                             Width="733" 
+                             Background="#FFDE5B00" 
+                             SelectionBrush="#FF00D717" 
+                             TextChanged="BytesTo_TextChanged" 
+                             Foreground="White"/>
+                        <Button Content=" Вывести ответ" 
+                            HorizontalAlignment="Left"
+                            Margin="217,119,0,0" 
+                            VerticalAlignment="Top"
+                            Height="83" Width="287" 
+                            Click="transformationToKiloButes_Click"
+                            Background="#FFDE5B00" 
+                            Foreground="White"/>
+                        <Label Name="Answer" 
+                           HorizontalAlignment="Left" 
+                           Margin="201,232,0,0" 
+                           VerticalAlignment="Top" 
+                           RenderTransformOrigin="0.5,0.5" 
+                           Height="78"
+                           Width="304" 
+                           Foreground="#FFFF001D">
+
+                        </Label>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+    </Grid>
+</Window>
